@@ -11,6 +11,18 @@
 |
 */
 
+
+Route::get('quotes/(:any)/edit', 'users@edit');
+//Route::controller(Controller::detect());
+
+Route::model('quote', 'Quote');
+Route::get('al/{quote}', function(Quote $quote)
+{
+	echo $quote->quote;
+	echo " s-";
+	echo $quote->person->name;
+});
+
 Route::get('/', function()
 {
 	/*
