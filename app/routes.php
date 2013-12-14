@@ -12,7 +12,7 @@
 */
 
 
-Route::get('quotes/(:any)/edit', 'users@edit');
+Route::get('quotes/(:any)/edit', 'quotes@edit');
 //Route::controller(Controller::detect());
 
 Route::model('quote', 'Quote');
@@ -22,6 +22,8 @@ Route::get('al/{quote}', function(Quote $quote)
 	echo " s-";
 	echo $quote->person->name;
 });
+
+Route::resource('person', 'PeopleController');
 
 Route::get('/', function()
 {
