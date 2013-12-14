@@ -1,5 +1,6 @@
 <?php
-class PeopleController extends BaseController {
+
+class TypesController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -8,8 +9,7 @@ class PeopleController extends BaseController {
 	 */
 	public function index()
 	{
-		//Tum kisileri goster
-		//dd(Person::all());
+		dd(Product::all());
 	}
 
 	/**
@@ -19,8 +19,7 @@ class PeopleController extends BaseController {
 	 */
 	public function create()
 	{
-		//Kişi oluşturma formunu göster
-		return 'form';
+		//
 	}
 
 	/**
@@ -30,13 +29,7 @@ class PeopleController extends BaseController {
 	 */
 	public function store()
 	{
-		//Adamı database e kaydet
-		//TODO: Sadece admine açık
-
-		$person = new Person;
-		$person->name = Input::post('name');
-		$person->save();
-		return 'Adamın adı: ' . e(Input::post('name'));
+		//
 	}
 
 	/**
@@ -47,7 +40,7 @@ class PeopleController extends BaseController {
 	 */
 	public function show($id)
 	{
-		//Adamın tüm alıntılarını gösterecek
+		//
 	}
 
 	/**
@@ -82,4 +75,5 @@ class PeopleController extends BaseController {
 	{
 		//
 	}
+
 }
