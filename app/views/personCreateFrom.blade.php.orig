@@ -11,8 +11,11 @@
 {{ Form::text('name','', array('class'=>'span2')) }}
 {{ Form::submit('Kaydet',array('class'=>'btn')) }}
 {{ Form::close() }}
+<<<<<<< HEAD
 
 </div>
 </div>
+=======
+>>>>>>> 92bc033ed826281122a548bec79beabc28b529a5
 
 @stop

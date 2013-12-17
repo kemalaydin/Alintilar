@@ -26,6 +26,7 @@ Route::get('al/{quote}', function(Quote $quote)
 Route::resource('person', 'PeopleController');
 Route::resource('product', 'ProductsController');
 Route::resource('type', 'TypesController');
+Route::resource('quote', 'QuotesController');
 
 //Route::model('person', 'Person');
 
