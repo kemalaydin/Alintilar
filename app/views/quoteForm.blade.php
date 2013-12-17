@@ -16,7 +16,7 @@
 	{{ Form::textarea('quote','',array('class'=>'span2')) }}
 
 	<span class="add-on">Alıntı Yapılan Eserin Adı : </span>
-	{{ Form::text('product_name', '';array('class' => 'span2')) }}
+	{{ Form::text('product_name', '', array('class' => 'span2')) }}
 	{{ Form::submit(' " Alıntı " Gönder ',array('class'=>'btn')) }}
 	{{ Form::close() }}
 
