@@ -64,12 +64,28 @@ class QuotesController extends BaseController {
 			$person_id = $person->id;
 		}
 
+		//Veritabanında o ürün varsa idsini al yoksa kaydetip al
+		$product = Product::where_name($data->product_name)->first();
+
+		if(!$product) {
+
+			$product = Product::create(array(
+				'name' => $data->product_name,
+				'type_id' => 1
+				));
+		}
+
+
+
 		$quote = new Quote;
 		$quote->quote = $data->quote;
+		$quote->person->associate($person);
+		$quote->product->associate($product);
 
-		$quote = Quote::create(array(
-			'quote' => $quote,
-			'person_id' => ))
+		$quote->save();
+
+		return 'bisiler';
+
 
 
 
