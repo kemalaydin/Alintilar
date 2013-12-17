@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mysql_uzak',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -58,6 +58,17 @@ return array(
 			'database'  => 'alintilar',
 			'username'  => 'root',
 			'password'  => '1',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+
+		'mysql_uzak' => array(
+			'driver'    => 'mysql',
+			'host'      => 'ec2-54-220-88-78.eu-west-1.compute.amazonaws.com',
+			'database'  => 'alintilar',
+			'username'  => 'uzak',
+			'password'  => 'asd123',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
