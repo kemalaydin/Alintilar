@@ -1,6 +1,6 @@
 <?php
 
-class TypesController extends \BaseController {
+class TypesController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -19,7 +19,7 @@ class TypesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('typeForm');
 	}
 
 	/**
@@ -29,7 +29,27 @@ class TypesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+
+		$rules = array(
+			'type' => 'unique:types'
+			);
+
+		$data = Input::all();
+
+		$validator = Validator::make($data, $rules);
+
+		if ($validator->passes())
+		{
+			$type = new Type;
+			$type->type = Input::get('type');
+
+			$type->save();
+		} else {
+			$messages = $validator->messages();
+		}
+
+
+		return 'Tip adı: ' . e(Input::get('type')) . ' ' . @$messages;
 	}
 
 	/**

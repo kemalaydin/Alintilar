@@ -34,10 +34,27 @@ class PeopleController extends BaseController {
 		//Adamı database e kaydet
 		//TODO: Sadece admine açık
 
-		$person = new Person;
-		$person->name = Input::get('name');
-		$person->save();
-		return 'Adamın adı: ' . e(Input::get('name'));
+
+		$rules = array(
+			'name' => 'unique:people'
+			);
+
+		$data = Input::all();
+
+		$validator = Validator::make($data, $rules);
+
+		if ($validator->passes())
+		{
+			$person = new Person;
+			$person->name = Input::get('name');
+
+			$person->save();
+		} else {
+			$messages = $validator->messages();
+		}
+
+
+		return 'Adamın adı: ' . e(Input::get('name')) . ' ' . @$messages;
 	}
 
 	/**
