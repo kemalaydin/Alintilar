@@ -23,7 +23,7 @@ class QuotesController extends BaseController {
 		// kişiyi ajaxla bul
 		// product ı ajaxla bul
 		//Formu /alınti a post at
-		//return View::make('personCreateFrom');
+		return View::make('quoteForm');
 	}
 
 	/**
@@ -33,8 +33,60 @@ class QuotesController extends BaseController {
 	 */
 	public function store()
 	{
+
 		//alıntıları database e kaydet
 		//kişiyi ve ürünü control et yoksa yeni oluştur
+
+		$rules = array(
+			'person_name' => 'required',
+			'quote' => 'required',
+			'product_name' => 'required',
+			);
+		$data = Input::all();
+
+		$validator = Validator::make($data, $rules);
+
+		if($validator->fails()) {
+			return 'olmadi';
+		}
+
+		
+		//Veritabanında o kişi varsa idsini al yoksa kaydetip al
+		$person = Person::where_name($data->person_name)->first();
+
+		if($person) {
+			$person_id = $person->id;
+		} else {
+			$person = new Person;
+			$person->name = $data->person_name;
+			$person->save();
+
+			$person_id = $person->id;
+		}
+
+		//Veritabanında o ürün varsa idsini al yoksa kaydetip al
+		$product = Product::where_name($data->product_name)->first();
+
+		if(!$product) {
+
+			$product = Product::create(array(
+				'name' => $data->product_name,
+				'type_id' => 1
+				));
+		}
+
+
+
+		$quote = new Quote;
+		$quote->quote = $data->quote;
+		$quote->person->associate($person);
+		$quote->product->associate($product);
+
+		$quote->save();
+
+		return 'bisiler';
+
+
 
 
 	}
