@@ -20,7 +20,8 @@ class PeopleController extends BaseController {
 	public function create()
 	{
 		//Kişi oluşturma formunu göster
-		return 'form';
+		//Formu /person a post at
+		return View::make('personCreateFrom');
 	}
 
 	/**
@@ -34,9 +35,9 @@ class PeopleController extends BaseController {
 		//TODO: Sadece admine açık
 
 		$person = new Person;
-		$person->name = Input::post('name');
+		$person->name = Input::get('name');
 		$person->save();
-		return 'Adamın adı: ' . e(Input::post('name'));
+		return 'Adamın adı: ' . e(Input::get('name'));
 	}
 
 	/**
