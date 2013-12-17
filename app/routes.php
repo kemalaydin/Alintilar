@@ -27,7 +27,7 @@ Route::resource('person', 'PeopleController');
 Route::resource('product', 'ProductsController');
 Route::resource('type', 'TypesController');
 
-Route::model('person', 'Person');
+//Route::model('person', 'Person');
 
 Route::get('/', function()
 {

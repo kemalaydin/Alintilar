@@ -30,6 +30,8 @@ class TypesController extends BaseController {
 	public function store()
 	{
 
+
+		//type in database te tek aynı değeri olmadığından emin oluyor
 		$rules = array(
 			'type' => 'unique:types'
 			);
