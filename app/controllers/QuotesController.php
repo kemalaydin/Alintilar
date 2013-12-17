@@ -9,7 +9,7 @@ class QuotesController extends BaseController {
 	public function index()
 	{
 		//Tum kisileri goster
-		//dd(Person::all());
+		return Quote::all();
 	}
 
 	/**
@@ -50,37 +50,42 @@ class QuotesController extends BaseController {
 			return 'olmadi';
 		}
 
-		
+		//dd($data);
 		//Veritabanında o kişi varsa idsini al yoksa kaydetip al
-		$person = Person::where_name($data->person_name)->first();
+		$person = Person::wherename($data['person_name'])->first();
 
 		if($person) {
 			$person_id = $person->id;
 		} else {
 			$person = new Person;
-			$person->name = $data->person_name;
+			$person->name = $data['person_name'];
 			$person->save();
 
 			$person_id = $person->id;
 		}
 
 		//Veritabanında o ürün varsa idsini al yoksa kaydetip al
-		$product = Product::where_name($data->product_name)->first();
+		$product = Product::wherename($data['product_name'])->first();
 
 		if(!$product) {
 
-			$product = Product::create(array(
-				'name' => $data->product_name,
-				'type_id' => 1
-				));
+			// $product = Product::create(array(
+			// 	'name' => $data['product_name'],
+			// 	'type_id' => 1
+			// 	));
+
+			$product = new Product;
+			$product->name = $data['product_name'];
+			$product->type_id = 1;
+			$product->save();
 		}
 
 
 
 		$quote = new Quote;
-		$quote->quote = $data->quote;
-		$quote->person->associate($person);
-		$quote->product->associate($product);
+		$quote->quote = $data['quote'];
+		$quote->person()->associate($person);
+		$quote->product()->associate($product);
 
 		$quote->save();
 

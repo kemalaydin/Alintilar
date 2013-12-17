@@ -12,16 +12,16 @@
 */
 
 
-Route::get('quotes/(:any)/edit', 'quotes@edit');
-//Route::controller(Controller::detect());
+// Route::get('quotes/(:any)/edit', 'quotes@edit');
+// //Route::controller(Controller::detect());
 
-Route::model('quote', 'Quote');
-Route::get('al/{quote}', function(Quote $quote)
-{
-	echo $quote->quote;
-	echo " s-";
-	echo $quote->person->name;
-});
+// Route::model('quote', 'Quote');
+// Route::get('al/{quote}', function(Quote $quote)
+// {
+// 	echo $quote->quote;
+// 	echo " s-";
+// 	echo $quote->person->name;
+// });
 
 Route::resource('person', 'PeopleController');
 Route::resource('product', 'ProductsController');
