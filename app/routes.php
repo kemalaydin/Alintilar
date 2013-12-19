@@ -53,11 +53,15 @@ Route::get('/', function()
 	$quote->save();
 	*/
 
-	$quote = Quote::find(1);
 
+
+ 		$quote = Quote::find(1);
+ 
 	echo $quote->quote;
 	echo " -";
 	echo $quote->person->name;
+
+
 
 });
 
@@ -65,6 +69,5 @@ Route::get('/alinti/{id?}', function($id = 1)
 {
 	$q = Quote::find($id);
 	echo $q->quote;
-
 
 })->where('id', '[0-9]+');

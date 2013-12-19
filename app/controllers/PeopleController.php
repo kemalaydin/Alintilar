@@ -54,7 +54,7 @@ class PeopleController extends BaseController {
 		}
 
 
-		return 'Adamın adı: ' . e(Input::get('name')) . ' ' . @$messages;
+		return 'Alıntı Yapılan Kişi : ' . e(Input::get('name')) . ' ' . @$messages;
 	}
 
 	/**

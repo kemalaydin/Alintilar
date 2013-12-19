@@ -9,6 +9,8 @@
 
     <!-- Le styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
     <style type="text/css">
       body {
@@ -20,36 +22,36 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Alıntılar.com</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="#">Ana Sayfa</a></li>
-              <li><a href="../quote/create">+ Alıntı Ekle</a></li>
-            <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">Kişiler <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="../person/create">Kişi ekle</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-              <li><a href="#contact">Sözler</a></li>
-              <li><a href="#contact">İletişim</a></li>
-            </ul>
-           </div><!--/.nav-collapse -->
+          <a class="navbar-brand" href="#">Alıntılar</a>
         </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.php">Ana Sayfa</a></li>
+            <li><a href="../public/index.php/quote/create">+ Alıntı Ekle</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kişiler <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+               <!--  <li><a href="../person/create">Kişi Ekle</a></li> -->
+                <li><a href="#">Kişi Listesi</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Yönetici İşlemleri</li>
+                <li><a href="../person/create">Kişi Ekle</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Sözler</a></li>
+            <li><a href="#">İletişim</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
@@ -58,7 +60,7 @@
     
       <!-- Example row of columns -->
       <div class="row">
-        <div class="span12">
+        <div class="col-sm-12">
           @yield('content')
         </div>
         
