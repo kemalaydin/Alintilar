@@ -55,13 +55,13 @@ class QuotesController extends BaseController {
 		$person = Person::wherename($data['person_name'])->first();
 
 		if($person) {
-			$person_id = $person->id;
+			//$person_id = $person->id;
 		} else {
 			$person = new Person;
 			$person->name = $data['person_name'];
 			$person->save();
 
-			$person_id = $person->id;
+			//$person_id = $person->id;
 		}
 
 		//Veritabanında o ürün varsa idsini al yoksa kaydetip al

@@ -10,6 +10,7 @@ class PeopleController extends BaseController {
 	{
 		//Tum kisileri goster
 		//dd(Person::all());
+
 	}
 
 	/**

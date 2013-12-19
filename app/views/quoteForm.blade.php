@@ -1,5 +1,21 @@
 @extends('layout')
 
+@section('javascript')
+<script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script> 
+<script type="text/javascript">
+
+$( document ).ready(function() {
+	
+alert('naber');
+
+
+
+});
+
+</script>
+
+
+@end
 
 @section('content')
 
