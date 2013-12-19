@@ -55,13 +55,13 @@ Route::get('/', function()
 
 
 
- 		$quote = Quote::find(1);
+ // 		$quote = Quote::find(1);
  
-	echo $quote->quote;
-	echo " -";
-	echo $quote->person->name;
+	// echo $quote->quote;
+	// echo " -";
+	// echo $quote->person->name;
 
-
+return View::make('index');
 
 });
 

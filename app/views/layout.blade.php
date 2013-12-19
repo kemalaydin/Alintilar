@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    @yield('javascript')
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -36,7 +38,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.php">Ana Sayfa</a></li>
-            <li><a href="../public/index.php/quote/create">+ Alıntı Ekle</a></li>
+            <li><a href="{{ url('quote/create') }}">+ Alıntı Ekle</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kişiler <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -44,7 +46,7 @@
                 <li><a href="#">Kişi Listesi</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Yönetici İşlemleri</li>
-                <li><a href="../person/create">Kişi Ekle</a></li>
+                <li><a href="{{ url('person/create') }}">Kişi Ekle</a></li>
               </ul>
             </li>
             <li><a href="#">Sözler</a></li>
