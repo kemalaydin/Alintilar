@@ -14,7 +14,11 @@
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
     @yield('css')
 
+    @yield('css')
+
     @yield('javascript')
+
+    
     <style type="text/css">
       body {
         padding-top: 60px;

@@ -1,0 +1,17 @@
+/* */
+
+.width-500{
+	width: 500px !important;
+}
+.margin-top-20{
+	margin-left: 10px !important;
+}
+.action:hover{
+	background: #eeeeee;
+}
+.social_share{
+	float:right;
+}
+.clear{
+	clear:both;
+}
