@@ -1,21 +1,54 @@
 @extends('layout')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/ui-lightness/jquery-ui-1.10.3.custom.css') }}" type="text/css" media="screen" charset="utf-8" />
+
+@stop
+
 @section('javascript')
-<script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script> 
+
+<script type="text/javascript" src="{{ asset('js/jquery-ui-1.10.3.custom.js') }}"></script> 
 <script type="text/javascript">
 
+
+//TODO ajaxı düzelt
+//http://stackoverflow.com/questions/9232748/twitter-bootstrap-typeahead-ajax-example
+//http://stackoverflow.com/questions/12621823/ajax-call-populate-typeahead-bootstrap
 $( document ).ready(function() {
-	
-alert('naber');
 
-
-
+	$( "input[name='person_name']" ).autocomplete({
+		 source: function( request, response ) {
+			$.ajax({
+				url: "{{ url('person_ajax')}}",
+				dataType: "jsonp",
+				data: {
+					featureClass: "P",
+					style: "full",
+					maxRows: 12,
+					name_startsWith: request.term
+				},
+				success: function( data ) {
+					response( $.map( data.geonames, function( item ) {
+						return {
+						label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
+						value: item.name
+						}
+					}));
+				}
+			});
+		},
+		minLength: 2,
+		select: function( event, ui ) {
+		alert( ui.item ?
+		"Selected: " + ui.item.value + " aka " + ui.item.id :
+		"Nothing selected, input was " + this.value );
+		}
+	});
 });
-
 </script>
 
 
-@end
+@stop
 
 @section('content')
 

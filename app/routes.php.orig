@@ -55,30 +55,18 @@ Route::get('/', function()
 
 
 
+<<<<<<< HEAD
 	return View::make('index');
 
+=======
+ // 		$quote = Quote::find(1);
+ 
+	// echo $quote->quote;
+	// echo " -";
+	// echo $quote->person->name;
+>>>>>>> a55a2f8da90abcb4b71e9563d4504f09cb430794
 
-
-});
-
-Route::post('person_ajax', function()
-{
-	// $q = Quote::find($id);
-	// echo $q->quote;
-
-
-
-	//&& Request::ajax() 
-
-	$hepsi = Input::all();
-	$yazi = $hepsi['term'];
-
-	if (strlen($yazi) >= 3 )
-	{
-	    return Person::where('name', 'like', "$yazi%")->get(array('name'))->toJson();
-	}
-
-	//return 'kaka';
+return View::make('index');
 
 });
 

@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+    @yield('css')
 
     @yield('javascript')
     <style type="text/css">
