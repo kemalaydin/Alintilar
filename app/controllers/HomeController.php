@@ -15,9 +15,15 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
-	{
-		return View::make('hello');
+	public function index(){
+
+		// Ana sayfada listelenecek son 5 alıntıyı view'a  gönderiyoruz ---> 
+
+		$lastQuotes = Quote::with('person')->orderBy('id','DESC')->take(5)->get();
+		return View::make('index.index',compact('lastQuotes'));
+
+		// ----
+
 	}
 
 }

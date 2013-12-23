@@ -28,7 +28,7 @@
 
   <body>
 
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Alıntılar</a>
+          <a class="navbar-brand" href="#">Alıntılar Sistemi </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -60,60 +60,25 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <div class="ortala">
     <div class="container">
+    <div class="alert alert-warning text-center">Alıntılar sistemi henüz test aşamasındadır</div>
 
     
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-sm-9">
+        
           @yield('content')
-        </div>
-        <div class="col-sm-3">
-          <div class="page-header"><h1>Söz Sahipleri</h1></div>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <span class="badge">14</span>
-              Johny Deep
-            </li>
-
-            <li class="list-group-item">
-              <span class="badge">50</span>
-              Johny Deep
-            </li>
-
-            <li class="list-group-item">
-              <span class="badge">11</span>
-              Johny Deep
-            </li>
-
-            <li class="list-group-item">
-              <span class="badge">9</span>
-              Johny Deep
-            </li>
-
-            <li class="list-group-item">
-              <span class="badge">14</span>
-              Johny Deep
-            </li>
-
-            <li class="list-group-item">
-              <span class="badge">10</span>
-              Johny Deep
-            </li>
-          </ul>
-
-        </div>
+       
+      
       </div>
 
-      <hr>
-
-      <footer>
-        <p>&copy; Alıntılar.com 2013</p>
-      </footer>
 
     </div> <!-- /container -->
-    </div>
 
+   <hr>
+
+      <footer class="text-center">
+        <p>&copy; Alıntılar.com 2013</p>
+      </footer>
   </body>
 </html>

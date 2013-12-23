@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('template.index')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/ui-lightness/jquery-ui-1.10.3.custom.css') }}" type="text/css" media="screen" charset="utf-8" />

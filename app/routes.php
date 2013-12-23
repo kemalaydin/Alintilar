@@ -22,7 +22,6 @@
 // 	echo " s-";
 // 	echo $quote->person->name;
 // });
-
 Route::resource('person', 'PeopleController');
 Route::resource('product', 'ProductsController');
 Route::resource('type', 'TypesController');
@@ -30,36 +29,8 @@ Route::resource('quote', 'QuotesController');
 
 //Route::model('person', 'Person');
 
-Route::get('/', function()
-{
-	/*
-	$person = new Person;
-	$person->name = 'İbrahim Tatlıses';
-	$person->save();
+Route::get('/','HomeController@index');
 
-	$type = new Type;
-	$type->type = 'Söz';
-	$type->save();
-
-	$product = new Product;
-	$product->name = ' ';
-	$product->type()->associate($type);
-	$product->save();
-
-	$quote = new Quote;
-	$quote->quote = 'Ben donsuz karı severim';
-	$quote->person()->associate($person);
-	$quote->product()->associate($product);
-	$quote->save();
-	*/
-
-
-	// Views içerisinde ki index klasöründe bulunan index.blade.php dosyasını çalıştırır ( Kemal - Views düzenlemesi)
-	return View::make('index.index');
-
-
-
-});
 
 Route::post('person_ajax', function()
 {

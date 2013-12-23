@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('template.index')
 
 @section('content')
 <div class="page-header"><h1>Kişi Ekleme <small>Yeni Bir Söz Sahibi Ekleyin</small></h1></div>

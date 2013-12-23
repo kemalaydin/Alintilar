@@ -15,4 +15,6 @@
 .clear{
 	clear:both;
 }
-
+.green-color{
+ color:green !important;
+}
