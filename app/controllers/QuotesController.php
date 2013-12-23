@@ -23,7 +23,9 @@ class QuotesController extends BaseController {
 		// kişiyi ajaxla bul
 		// product ı ajaxla bul
 		//Formu /alınti a post at
-		return View::make('quoteForm');
+
+		// Views klasöründeki quote klasörü içerisindeki quoteForm.blade.php dosyasını çalıştırı ( Kemal - Views düzenlemesi)
+		return View::make('quote.quoteForm');
 	}
 
 	/**

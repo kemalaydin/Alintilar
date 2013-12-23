@@ -54,8 +54,8 @@ Route::get('/', function()
 	*/
 
 
-
-	return View::make('index');
+	// Views içerisinde ki index klasöründe bulunan index.blade.php dosyasını çalıştırır ( Kemal - Views düzenlemesi)
+	return View::make('index.index');
 
 
 

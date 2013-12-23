@@ -22,7 +22,9 @@ class PeopleController extends BaseController {
 	{
 		//Kişi oluşturma formunu göster
 		//Formu /person a post at
-		return View::make('personCreateFrom');
+
+		// Views Klasörü içerisinde people klasöründe bulunan personCreateForm.blade.php dosyasını çalıştırır ( Kemal - Views düzenlemesi)
+		return View::make('people.personCreateForm');
 	}
 
 	/**
