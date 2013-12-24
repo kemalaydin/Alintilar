@@ -73,12 +73,14 @@ class PeopleController extends BaseController {
 		if(is_string($id)) $name = $id;
 		else $name = "";
 
-		//&& Request::ajax() 
+		//&& Request::ajax()
 
-		if (strlen($name) >= 3 )
+		if (strlen($name) >= 3 && Request::ajax() )
 		{
 		    return Person::where('name', 'like', "$name%")->get()->toJson();
 		}
+
+		//Kişi göster yapılacak
 
 		return $id;
 	}
@@ -116,14 +118,4 @@ class PeopleController extends BaseController {
 		//
 	}
 
-	/**
-	 * Ajax_get.
-	 *
-	 * @param  string  $name
-	 * @return Response
-	 */
-	public function ajax($name)
-	{
-
-	}
 }
