@@ -11,39 +11,77 @@
 <script type="text/javascript">
 
 
+
+
+
 //TODO ajaxı düzelt
 //http://stackoverflow.com/questions/9232748/twitter-bootstrap-typeahead-ajax-example
 //http://stackoverflow.com/questions/12621823/ajax-call-populate-typeahead-bootstrap
 $( document ).ready(function() {
 
-	$( "input[name='person_name']" ).autocomplete({
-		 source: function( request, response ) {
-			$.ajax({
-				url: "{{ url('person_ajax')}}",
-				dataType: "jsonp",
-				data: {
-					featureClass: "P",
-					style: "full",
-					maxRows: 12,
-					name_startsWith: request.term
-				},
-				success: function( data ) {
-					response( $.map( data.geonames, function( item ) {
-						return {
-						label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
-						value: item.name
-						}
-					}));
-				}
-			});
-		},
-		minLength: 2,
-		select: function( event, ui ) {
-		alert( ui.item ?
-		"Selected: " + ui.item.value + " aka " + ui.item.id :
-		"Nothing selected, input was " + this.value );
-		}
+//input[name='person_name']
+
+	function ajaxDondurKisi(request, response) {
+		$.ajax({
+		    type: "GET",
+		    contentType: "application/json; charset=utf-8",
+		    url: "{{ url('person/"+ request.term.toLowerCase() +"')}}",
+		    data: "",
+		    dataType: "json",
+		    success: function (data) {
+		        //response(data);
+		        //alert(data)
+			    response($.map(data, function(kisi) {
+				    return {
+				        label: kisi.name,
+				        //value: kisi.id
+				        value: kisi.name
+				    }
+			    }));
+
+		    },
+		    error: function (result) {
+		    }
+		});
+	}
+
+	function ajaxDondurEser(request, response) {
+		$.ajax({
+		    type: "GET",
+		    contentType: "application/json; charset=utf-8",
+		    url: "{{ url('product/"+ request.term.toLowerCase() +"')}}",
+		    data: "",
+		    dataType: "json",
+		    success: function (data) {
+		        //response(data);
+		        //alert(data)
+			    response($.map(data, function(kisi) {
+				    return {
+				        label: kisi.name,
+				        //value: kisi.id
+				        value: kisi.name
+				    }
+			    }));
+
+		    },
+		    error: function (result) {
+		    }
+		});
+	}
+
+	$("input[name='person_name']").autocomplete({
+	    source: ajaxDondurKisi,
+	    minLength: 3
 	});
+
+
+	$("input[name='product_name']").autocomplete({
+	    source: ajaxDondurEser,
+	    minLength: 3
+	});
+
+
+
 });
 </script>
 

@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+/bootstrap/compiled.php
+/vendor
 composer.phar
 composer.lock
 .DS_Store
 Thumbs.db
-=======
->>>>>>> add8b8b1f0b2331d5a234d1e2d164419bdbfa13e
-=======
->>>>>>> add8b8b1f0b2331d5a234d1e2d164419bdbfa13e
-/.project

@@ -40,7 +40,14 @@ class ProductsController extends BaseController {
 	 */
 	public function show($id)
 	{
-		//
+
+		if(is_string($id)) $name = $id;
+		else $name = "";
+
+		if (strlen($name) >= 3 && Request::ajax() )
+		{
+		    return Product::where('name', 'like', "$name%")->get()->toJson();
+		}
 	}
 
 	/**
