@@ -21,7 +21,7 @@ class HomeController extends BaseController {
 
 		$lastQuotes = Quote::with('person')->orderBy('id','DESC')->take(5)->get();
 		$People = Person::all();
-		return View::make('index.index',compact('lastQuotes,People'));
+		return View::make('index.index',compact('lastQuotes','People'));
 
 		// ----
 
