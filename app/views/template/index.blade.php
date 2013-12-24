@@ -12,6 +12,7 @@
     {{ HTML::style('assets/css/style.css') }}
     {{ HTML::script('https://code.jquery.com/jquery.js') }}
     {{ HTML::script('assets/js/bootstrap.min.js') }}
+    {{ HTML::script('assets/js/jquery.nicescroll.min.js') }}
 
     @yield('css')
 
@@ -69,7 +70,10 @@
         
           @yield('content')
        
-      
+          @section('rightPanel')
+            
+
+          @show
       </div>
 
 

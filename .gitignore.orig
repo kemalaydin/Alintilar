@@ -1,0 +1,10 @@
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock
+.DS_Store
+<<<<<<< HEAD
+Thumbs.db
+=======
+Thumbs.db
+>>>>>>> 3dfada3d9b3a02337c0f165e97719a6fb3febe91

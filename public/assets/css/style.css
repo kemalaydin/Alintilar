@@ -18,3 +18,8 @@
 .green-color{
  color:green !important;
 }
+.kisitla
+{
+	height: 600px;
+	overflow: auto;
+}
