@@ -65,7 +65,7 @@
 
                 @foreach($People as $Person)
 
-                  <a href="{{ url('people/'.$Person->id ) }}"  class="list-group-item">
+                  <a href="{{ url('person/'.$Person->id ) }}"  class="list-group-item">
                   <h5 class="list-group-item-heading">{{ $Person->name }}</h5>
                  </a>
               

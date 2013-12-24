@@ -81,10 +81,18 @@ class PeopleController extends BaseController {
 		}
 
 		//Kişi göster yapılacak
+	
+		$People = Person::all();
 
-			$person = Person::find($id);
+		//person id li tum quoteları person ve product iliskisiyle yukle
+		$quotes = Quote::whereperson_id($id)->get();
+		$quotes->load('person','product');
 
-		return View::make('people.quotes',compact('person'));
+		//ilk quotun yazarını al (hepsinin yazarı aynı)
+		$person = $quotes->first();
+		
+
+		return View::make('people.quotes',compact('person','quotes','People'));
 	}
 
 	/**
