@@ -82,7 +82,9 @@ class PeopleController extends BaseController {
 
 		//Kişi göster yapılacak
 
-		return $id;
+			$person = Person::find($id);
+
+		return View::make('people.quotes',compact('person'));
 	}
 
 	/**
