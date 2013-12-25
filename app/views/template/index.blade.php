@@ -28,37 +28,40 @@
   </head>
 
   <body>
-
+    {{ App::setLocale(Session::get('lang', 'tr')) }}
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('img/quote.png') }}" /> Alıntılar Sistemi </a>
+          <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('img/quote.png') }}" /> {{ trans('menu.Başlık') }} </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="{{ url('/') }}">Ana Sayfa</a></li>
-            <li><a href="{{ url('quote/create') }}">+ Alıntı Ekle</a></li>
+            <li><a href="{{ url('/') }}">{{ trans('menu.AnaSayfa') }}</a></li>
+            <li><a href="{{ url('quote/create') }}">{{ trans('menu.AlıntıEkle') }}</a></li>
             <li class="dropdown">
-              <a href="{{ url('/person') }}" class="dropdown-toggle" data-toggle="dropdown">Kişiler <b class="caret"></b></a>
+              <a href="{{ url('/person') }}" class="dropdown-toggle" data-toggle="dropdown">{{ trans('menu.Kişiler') }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
                <!--  <li><a href="../person/create">Kişi Ekle</a></li> -->
-                <li><a href="{{ url('/person') }}">Kişi Listesi</a></li>
+                <li><a href="{{ url('/person') }}">{{ trans('menu.KişilerListesi') }}</a></li>
                 <li class="divider"></li>
-                <li class="dropdown-header">Ekleme İşlemleri</li>
-                <li><a href="{{ url('person/create') }}">Kişi Ekle</a></li>
+                <li class="dropdown-header">{{ trans('menu.Eklemeİşlem') }}</li>
+                <li><a href="{{ url('person/create') }}">{{ trans('menu.KişilerEkle') }}</a></li>
               </ul>
             </li>
-            <li><a href="{{ url('/quote') }}">Sözler</a></li>
-            <li><a href="{{ url('/contact') }}">İletişim</a></li>
+            <li><a href="{{ url('/quote') }}">{{ trans('menu.Sözler') }}</a></li>
+            <li><a href="{{ url('/contact') }}">{{ trans('menu.İletişim') }}</a></li>
 
           </ul>
+
+        <a href="{{ url('lang/tr') }}"> <img src="{{ asset('img/turkish.png') }}" title="Siteyi Türkçe Diline Çevir" /></a>
+        <a href="{{ url('lang/en') }}"><img src="{{ asset('img/english.png') }}" title="Convert to English" /></a>
+
         </div><!--/.nav-collapse -->
       </div>
     </div>
     <div class="container">
     <div id="testasamasi" class="alert alert-warning text-center">Alıntılar sistemi henüz test aşamasındadır</div>
 
-    
       <!-- Example row of columns -->
       <div class="row">
         

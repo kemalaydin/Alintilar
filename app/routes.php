@@ -101,6 +101,21 @@ Route::get('/contact',function(){
 
 });
 
+Route::get('lang/{lang}', function($lang)
+{
+
+	if($lang == "en")
+	{
+		Session::put('lang', 'en');
+	}
+	else
+	{
+   		Session::put('lang', 'tr');
+   	}
+
+   	return Redirect::to('/');
+});
+
 Route::get('test', function() {
 	$capture = Webcap::open('http://www.xonaymedia.nl')
 	            ->filetype('png')

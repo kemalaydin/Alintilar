@@ -15,7 +15,7 @@
 	
 	 <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Yeni Gönderilen Alıntılar</h3>
+                    <h3 class="panel-title">{{ trans('title.YeniAlıntılar') }}</h3>
                 </div>
 
                 @foreach($lastQuotes as $lastQuote)
@@ -50,7 +50,7 @@
 <div class="col-md-4">
 	 <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Alıntı Yapılan Kişiler</h3>
+                    <h3 class="panel-title">{{ trans('title.AlıntıYapılan') }}</h3>
                 </div>
 
                 <div class="kisitla" id="kisitla">
