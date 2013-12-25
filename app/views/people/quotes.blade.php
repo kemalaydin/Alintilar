@@ -1,5 +1,6 @@
 @extends('template.index')
 
+
 @section('javascript')
 <script>
   $(document).ready(function() {
@@ -11,29 +12,39 @@
 @stop
 
 @section('content')
-<div class="col-md-8">	
+	<div class="col-md-8">	
 	
 	 <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Yeni Gönderilen Alıntılar</h3>
+                
+				<div class="panel-heading">
+                    <h3 class="panel-title"><b> {{ $person->person->name; }} </b> Alıntıları</h3>
                 </div>
 
-                @foreach($lastQuotes as $lastQuote)
+   
+              @foreach($quotes as $quote)
+              
+                  <a href="{{ url('quote/'.$quote->id ) }}"  class="list-group-item">
+                  <h5 class="list-group-item-heading">{{  $quote->quote }}</h5>
+                  <small class="list-group-item-text"><b> {{ $quote->person->name }} </b> 'dan alıntı yapıldı <span class="green-color"></span></small>
+                   	 <div style="float:right;">
+          
 
-                  <a href="{{ url('quote/'.$lastQuote->id ) }}"  class="list-group-item">
-                  <h5 class="list-group-item-heading">{{  $lastQuote->quote }}</h5>
-                  <small class="list-group-item-text"><b> {{ $lastQuote->Person->name }} </b> 'dan alıntı yapıldı <span class="green-color">( Kaynak : <b> {{ $lastQuote->Product->name }} </b> )</span></small>
-                   	    <div style="float:right;">
-         
-                  </div>
-               
+                  
+
+					<label class="label label-primary">Facebook'ta Paylaş</label>
+
+                  	
+                  	<span class="label label-info">Tweetle</span>
+
+                  </div> 
+                
                	 </a>
               
                   <div style="clear:both;"></div>
 
                 @endforeach
 
-
+  			
 
                   
         </div>
@@ -41,7 +52,6 @@
 
 </div>
 @stop
-
 
 @section('rightPanel')
 <div class="col-md-4">

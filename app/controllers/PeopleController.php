@@ -68,23 +68,31 @@ class PeopleController extends BaseController {
 	 */
 	public function show($id)
 	{
-		//Adamın tüm alıntılarını gösterecek
+		      //Adamın tüm alıntılarını gösterecek
 
-		if(is_string($id)) $name = $id;
-		else $name = "";
+                if(is_string($id)) $name = $id;
+                else $name = "";
 
-		//&& Request::ajax()
+                //&& Request::ajax()
 
-		if (strlen($name) >= 3 && Request::ajax() )
-		{
-		    return Person::where('name', 'like', "$name%")->get()->toJson();
-		}
+                if (strlen($name) >= 3 && Request::ajax() )
+                {
+                    return Person::where('name', 'like', "$name%")->get()->toJson();
+                }
 
-		//Kişi göster yapılacak
+                //Kişi göster yapılacak
+        
+                $People = Person::all();
 
-			$person = Person::find($id)->with('quotes');
+                //person id li tum quoteları person ve product iliskisiyle yukle
+                $quotes = Quote::whereperson_id($id)->get();
+                $quotes->load('person','product');
+         
+                //ilk quotun yazarını al (hepsinin yazarı aynı)
+                $person = $quotes->first();
+                
 
-		return View::make('people.quotes',compact('person'));
+                return View::make('people.quotes',compact('person','quotes','People','quoteName'));
 	}
 
 	/**

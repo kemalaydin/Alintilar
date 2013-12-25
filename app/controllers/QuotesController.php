@@ -107,6 +107,13 @@ class QuotesController extends BaseController {
 	public function show($id)
 	{
 		//Adamın tüm alıntılarını gösterecek
+
+		$QuoteDetay = Quote::whereid($id)->get();
+		$People = Person::all();
+
+		
+		return View::make('quote.quoteShow',compact('QuoteDetay','People'));
+
 	}
 
 	/**
