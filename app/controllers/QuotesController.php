@@ -9,7 +9,8 @@ class QuotesController extends BaseController {
 	public function index()
 	{
 		//Tum kisileri goster
-		return Quote::all();
+		$Quotes = Quote::orderBy('id')->paginate(10);
+		return View::make('quote.quoteList',compact('Quotes'));
 	}
 
 	/**

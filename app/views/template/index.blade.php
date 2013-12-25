@@ -32,30 +32,24 @@
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="{{ asset('img/quote.png') }}" /> Alıntılar Sistemi </a>
+          <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('img/quote.png') }}" /> Alıntılar Sistemi </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="{{ url('/') }}">Ana Sayfa</a></li>
             <li><a href="{{ url('quote/create') }}">+ Alıntı Ekle</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kişiler <b class="caret"></b></a>
+              <a href="{{ url('/person') }}" class="dropdown-toggle" data-toggle="dropdown">Kişiler <b class="caret"></b></a>
               <ul class="dropdown-menu">
                <!--  <li><a href="../person/create">Kişi Ekle</a></li> -->
-                <li><a href="#">Kişi Listesi</a></li>
+                <li><a href="{{ url('/person') }}">Kişi Listesi</a></li>
                 <li class="divider"></li>
-                <li class="dropdown-header">Yönetici İşlemleri</li>
+                <li class="dropdown-header">Ekleme İşlemleri</li>
                 <li><a href="{{ url('person/create') }}">Kişi Ekle</a></li>
               </ul>
             </li>
-            <li><a href="#">Sözler</a></li>
-            <li><a href="#">İletişim</a></li>
+            <li><a href="{{ url('/quote') }}">Sözler</a></li>
+            <li><a href="{{ url('/contact') }}">İletişim</a></li>
 
           </ul>
         </div><!--/.nav-collapse -->

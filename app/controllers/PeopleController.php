@@ -11,6 +11,9 @@ class PeopleController extends BaseController {
 		//Tum kisileri goster
 		//dd(Person::all());
 
+		$People = Person::orderBy('name')->paginate(10);
+		return View::make('people.peopleList',compact('People'));
+
 	}
 
 	/**
