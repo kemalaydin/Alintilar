@@ -2,6 +2,16 @@
 
 class BaseController extends Controller {
 
+
+	public $rightPeople; 
+
+    public function __construct() {
+        //parent::__construct();
+        
+        $this->rightPeople = Person::all();
+    }
+	
+
 	/**
 	 * Setup the layout used by the controller.
 	 *
@@ -14,5 +24,7 @@ class BaseController extends Controller {
 			$this->layout = View::make($this->layout);
 		}
 	}
+
+
 
 }

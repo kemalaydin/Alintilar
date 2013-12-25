@@ -34,6 +34,9 @@
                 @endforeach
 
 
+                <center> <?php echo $lastQuotes->links(); ?> </center>
+
+
 
                   
         </div>
@@ -52,7 +55,7 @@
 
                 <div class="kisitla" id="kisitla">
 
-                @foreach($People as $Person)
+                @foreach($rightPeople as $Person)
 
                   <a href="{{ url('person/'.$Person->id ) }}"  class="list-group-item">
                   <h5 class="list-group-item-heading">{{ $Person->name }}</h5>
