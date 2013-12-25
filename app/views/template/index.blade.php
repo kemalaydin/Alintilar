@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="container">
-    <div class="alert alert-warning text-center">Alıntılar sistemi henüz test aşamasındadır</div>
+    <div id="testasamasi" class="alert alert-warning text-center">Alıntılar sistemi henüz test aşamasındadır</div>
 
     
       <!-- Example row of columns -->

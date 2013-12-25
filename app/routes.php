@@ -100,3 +100,16 @@ Route::get('/contact',function(){
 	return View::make('constent.contact');
 
 });
+
+Route::get('test', function() {
+	$capture = Webcap::open('http://www.xonaymedia.nl')
+	            ->filetype('png')
+	            ->size(1200,675)
+	            ->capture();
+
+	if ($capture->file()) {
+	    return Response::download($capture->file());
+	} else {
+	    return $capture->error();
+}
+});
