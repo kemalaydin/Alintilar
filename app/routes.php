@@ -88,3 +88,8 @@ $img->text('The quick brown fox jumps over the lazy dog.', 0, 0, 24, '#cccccc');
 return $img->response();
 
 });
+
+Route::get('twit', function()
+{
+    return Twitter::postTweet(array('status' => 'Laravel is beautiful', 'format' => 'json'));
+});

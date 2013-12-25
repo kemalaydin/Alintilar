@@ -108,6 +108,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
+    	'Thujohn\Twitter\TwitterServiceProvider',
+
 
 	),
 
@@ -175,6 +177,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Image'           => 'Intervention\Image\Facades\Image',
+		'Twitter'		  => 'Thujohn\Twitter\TwitterFacade',
 
 	),
 

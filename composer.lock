@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "87e8c1563d8c873384e17432aef5e8b1",
+    "hash": "b8820e6c753d9537dca73206570c674f",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -2278,6 +2278,48 @@
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
             "time": "2013-11-28 10:27:26"
+        },
+        {
+            "name": "thujohn/twitter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thujohn/twitter-l4.git",
+                "reference": "d39181e937f0e0d1a3641a9814d2b55d88969332"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thujohn/twitter-l4/zipball/d39181e937f0e0d1a3641a9814d2b55d88969332",
+                "reference": "d39181e937f0e0d1a3641a9814d2b55d88969332",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.x",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Thujohn\\Twitter": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thujohn",
+                    "email": "jonathan.thuau@gmail.com"
+                }
+            ],
+            "description": "Twitter API for Laravel 4",
+            "keywords": [
+                "laravel",
+                "laravel4",
+                "twitter"
+            ],
+            "time": "2013-11-12 17:37:59"
         }
     ],
     "packages-dev": [
@@ -2288,7 +2330,8 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "intervention/image": 20
+        "intervention/image": 20,
+        "thujohn/twitter": 20
     },
     "platform": [
 
