@@ -19,7 +19,7 @@ class HomeController extends BaseController {
 
 		// Ana sayfada listelenecek son 5 alıntıyı view'a  gönderiyoruz ---> 
 
-		$lastQuotes = Quote::with('person')->orderBy('id','DESC')->take(5)->get();
+		$lastQuotes = Quote::with('person')->orderBy('id','DESC')->take(10)->get();
 		$People = Person::all();
 		return View::make('index.index',compact('lastQuotes','People'));
 

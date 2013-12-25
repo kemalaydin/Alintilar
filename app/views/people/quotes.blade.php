@@ -15,31 +15,29 @@
 	<div class="col-md-8">	
 	
 	 <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><b> {{ $quotes[0]->person->name }} </b> Alıntıları</h3>
+                
+				<div class="panel-heading">
+                    <h3 class="panel-title"><b> {{ $person->person->name; }} </b> Alıntıları</h3>
                 </div>
 
    
               @foreach($quotes as $quote)
-
+              
                   <a href="{{ url('quote/'.$quote->id ) }}"  class="list-group-item">
                   <h5 class="list-group-item-heading">{{  $quote->quote }}</h5>
                   <small class="list-group-item-text"><b> {{ $quote->person->name }} </b> 'dan alıntı yapıldı <span class="green-color"></span></small>
-                   	 {{--   <!--  <div style="float:right;">
+                   	 <div style="float:right;">
           
 
-                  	<a target="_blank" href="http://www.facebook.com/sharer.php?s=100
-					&p[url]={{ url('quote/'.$lastQuote->id ) }}
-					&p[title]={{ $lastQuote->quote }}
-					&p[summary]={{ $lastQuote->Person->name }} 'dan alıntı yapıldı ( Kaynak : {{ $lastQuote->Product->name }} )" 
+                  
 
 					<label class="label label-primary">Facebook'ta Paylaş</label>
 
                   	
                   	<span class="label label-info">Tweetle</span>
 
-                  </div> -->
-                --}}
+                  </div> 
+                
                	 </a>
               
                   <div style="clear:both;"></div>
