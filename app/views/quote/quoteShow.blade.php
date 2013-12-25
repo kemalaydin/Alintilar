@@ -32,6 +32,15 @@
   	Bu Alıntı <b> <a href="{{ url('person/'.$quotee->person->id) }}">{{ $quotee->person->name }} </b></a> 'nın <b> {{ $quotee->product->name }} </b> eserinden alınmıştır.
   	<span class="label label-success">Oluşturulma Tarihi : {{ $quotee->created_at }}</span>
 
+
+
+
+  	<a href="http://www.facebook.com/sharer.php?s=100
+					&p[url]={{ url('quote/'.$quotee->id ) }}
+					&p[title]={{ $quotee->quote }}
+					&p[summary]={{ $quotee->person->name }} 'dan alıntı yapıldı ( Kaynak : {{ $quotee->product->name }} )" class="label label-primary">Facebook'ta Paylaş</a>
+	<a href="#" class="label label-info">Tweetle</a>
+
   </div>
 	@endforeach
 
