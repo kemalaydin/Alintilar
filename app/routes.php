@@ -100,3 +100,18 @@ Route::get('/contact',function(){
 	return View::make('constent.contact');
 
 });
+
+Route::get('lang/{lang}', function($lang)
+{
+
+	if($lang == "en")
+	{
+		Session::put('lang', 'en');
+	}
+	else
+	{
+   		Session::put('lang', 'tr');
+   	}
+
+   	return Redirect::to('/');
+});

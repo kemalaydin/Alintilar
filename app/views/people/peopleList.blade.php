@@ -6,7 +6,7 @@
 		
 		 <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Kişiler Listesi</h3>
+                    <h3 class="panel-title">{{ trans('title.KişilerListesi') }}</h3>
                 </div>
 
 
