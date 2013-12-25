@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+use Intervention\Image\Image;
 
 // Route::get('quotes/(:any)/edit', 'quotes@edit');
 // //Route::controller(Controller::detect());
@@ -22,7 +22,6 @@
 // 	echo " s-";
 // 	echo $quote->person->name;
 // });
-
 Route::resource('person', 'PeopleController');
 Route::resource('product', 'ProductsController');
 Route::resource('type', 'TypesController');
@@ -30,49 +29,74 @@ Route::resource('quote', 'QuotesController');
 
 //Route::model('person', 'Person');
 
-Route::get('/', function()
+Route::get('/','HomeController@index');
+
+
+Route::post('person_ajax', function()
 {
-	/*
-	$person = new Person;
-	$person->name = 'İbrahim Tatlıses';
-	$person->save();
-
-	$type = new Type;
-	$type->type = 'Söz';
-	$type->save();
-
-	$product = new Product;
-	$product->name = ' ';
-	$product->type()->associate($type);
-	$product->save();
-
-	$quote = new Quote;
-	$quote->quote = 'Ben donsuz karı severim';
-	$quote->person()->associate($person);
-	$quote->product()->associate($product);
-	$quote->save();
-	*/
+	// $q = Quote::find($id);
+	// echo $q->quote;
 
 
 
-<<<<<<< HEAD
-	return View::make('index');
+	//&& Request::ajax() 
 
-=======
- // 		$quote = Quote::find(1);
- 
-	// echo $quote->quote;
-	// echo " -";
-	// echo $quote->person->name;
->>>>>>> a55a2f8da90abcb4b71e9563d4504f09cb430794
+	$hepsi = Input::all();
+	$yazi = $hepsi['term'];
 
-return View::make('index');
+	if (strlen($yazi) >= 3 )
+	{
+	    return Person::where('name', 'like', "$yazi%")->get(array('name'))->toJson();
+	}
+
+	//return 'kaka';
 
 });
 
-Route::get('/alinti/{id?}', function($id = 1)
-{
-	$q = Quote::find($id);
-	echo $q->quote;
+// Route::get('/alinti/{id?}', function($id = 1)
+// {
+// 	$q = Quote::find($id);
+// 	echo $q->quote;
 
-})->where('id', '[0-9]+');
+// })->where('id', '[0-9]+');
+
+Route::get('naber', function() 
+{
+	// // create Image from file
+	// $img = Image::make('foso.jpg');
+
+	// // write text
+	// $img->text('The quick brown fox jumps over the lazy dog.');
+
+	// // write text with more parameters (position 0,0; size 24pt; color #cccccc)
+	// $img->text('The quick brown fox jumps over the lazy dog.', 0, 0, 24, '#cccccc');
+
+	// // write half transparent text
+	// $img->text('foo', 0, 0, 72, array(255, 255, 255, 50));
+
+
+	// create a new empty image resource with transparent background
+//$img = Image::canvas(800, 600);
+
+// create a new empty image resource with red background
+$img = Image::canvas(480,360, '#ff0000');
+
+$img->text('The quick brown fox jumps over the lazy dog.', 0, 0, 24, '#cccccc');
+
+//$img->save('naber.jpg');
+
+return $img->response();
+
+});
+
+<<<<<<< HEAD
+Route::get('/contact',function(){
+
+	return View::make('constent.contact');
+
+=======
+Route::get('twit', function()
+{
+    return Twitter::postTweet(array('status' => 'Laravel is beautiful', 'format' => 'json'));
+>>>>>>> dbdecc65070f2dc8d88db6d5b9eb3016bb8a1ff3
+});

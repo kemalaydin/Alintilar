@@ -89,6 +89,12 @@ return $img->response();
 
 });
 
+Route::get('twit', function()
+{
+    return Twitter::postTweet(array('status' => 'Laravel is beautiful', 'format' => 'json'));
+});
+
+
 Route::get('/contact',function(){
 
 	return View::make('constent.contact');
