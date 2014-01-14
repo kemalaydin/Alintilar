@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql_uzak',
+	'default' => 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -63,16 +63,6 @@ return array(
 			'prefix'    => '',
 		),
 
-		'mysql_uzak' => array(
-			'driver'    => 'mysql',
-			'host'      => 'ec2-54-220-88-78.eu-west-1.compute.amazonaws.com',
-			'database'  => 'alintilar',
-			'username'  => 'uzak',
-			'password'  => 'asd123',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		),
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
